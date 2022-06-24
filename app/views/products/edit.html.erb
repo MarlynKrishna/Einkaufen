@@ -1,0 +1,38 @@
+<h1>Product#edit</h1>
+<p>Find me in app/views/product/edit.html.erb</p>
+<div class="container">   
+  
+<%= form_for @item, url: {action: :update} do |f| %>   
+     
+   <h3>Add a item</h3>   
+ <%= "<div>#{@item.errors.full_messages.first}</div>".html_safe if @item.errors.any? %>   
+    <p>   
+  
+     <div>   
+            <label>item Name</label>   
+            <%= f.text_field :name %>   
+     </div>   
+  
+     <div>   
+            <label>Price</label>   
+            <%= f.text_field :price %> 
+        </div> 
+         <div>   
+            <label>Image</label>   
+            <%= f.text_field :image_url %> 
+           
+     </div>     
+       
+        
+     <div>   
+            <label>Qunatity</label>   
+            <%= f.text_field :quantity %>   
+     </div>   
+  
+      </p>   
+   <div>   
+      <%= link_to 'Back',"/" %>   
+      <%= f.submit 'Update item' %>   
+    </div>   
+<% end %>   
+</div>  

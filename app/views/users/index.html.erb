@@ -1,0 +1,10 @@
+<h1>Users#index</h1>
+<p>Find me in app/views/users/index.html.erb</p>
+<h1> Hello and Welcome <h1> 
+<% if current_user %>
+
+    <%= link_to 'Logout', '/logout', :data => { :confirm => 'Are you sure?' }%>
+<% else %>
+    <%= link_to 'Signup', '/signup'%>
+    <%= link_to 'Login', '/login'%>
+<% end %>

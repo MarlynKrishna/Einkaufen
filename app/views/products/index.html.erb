@@ -1,0 +1,39 @@
+<%= render "navbar"%>
+
+<h3>STOCK LIST</h3>
+
+<div>
+  <%= link_to 'Add Product', new_product_path %>
+</div>
+<br>
+
+<table class="table table-bordered table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Image</th>
+    <th>Quantity</th>
+    <th>Actions</th>
+
+  </tr>
+
+  <% @items.each do |item| %>
+  <tr>
+    <td><%= item.name %></td>
+    <td><%= item.price %></td>
+    
+     
+     <%# <td><%= image_tag(item.image_url.url, style: 'height:50px;width:auto;')%></td> 
+
+     <td> <%= item.quantity %></td>
+    
+      <%# <%= link_to 'Show', item_path(item) %> 
+      <%# <%= link_to 'Edit', edit_item_path(item) %> 
+      <td><%= link_to 'Delete', products_path(item.id), data: { turbo_method: :delete } %></td>
+      <%# <%= button_to 'Delete',  item_path(product),  method: :delete %>
+
+   
+
+  </tr>
+  <% end %>
+</table>

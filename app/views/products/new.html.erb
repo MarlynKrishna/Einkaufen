@@ -1,0 +1,33 @@
+<%= form_with scope: :product, url:products_path, local: true do |item| %>  
+        
+        <h3>Add a Product</h3>   
+  
+        <div class="field">   
+            <%= item.label :name %>   
+              <%= item.text_field :name %>   
+        </div>   
+  
+        <div class="field">   
+             <%= item.label :price %>   
+             <%= item.text_field :price %>   
+        </div>   
+        <%# <div class="field">   
+             <%= item.label :image %>   
+               
+             <%# <%= image_tag(item.image_url.url, style: 'height:50px;width:auto;') %>
+        <%# </div>      %> 
+        
+  
+        <div class="field">   
+           <%= item.label :quantity %>   
+              <%= item.text_field :quantity %>   
+        </div>  
+         
+           
+     
+      <div class="actions">   
+        <%= link_to 'Back', { controller: 'product', action: 'index'} %>   
+        <%= item.submit 'Create item' %>   
+      </div>   
+  <% end %>
+
